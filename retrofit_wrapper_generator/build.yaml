@@ -1,3 +1,13 @@
+targets:
+  $default:
+    builders:
+      retrofit_wrapper_generator:
+        enabled: true
+      source_gen|combining_builder:
+        options:
+          ignore_for_file:
+            - "type=lint"
+            
 builders:
   retrofit_wrapper_generator:
     import: "package:retrofit_wrapper_generator/builder.dart"
@@ -5,5 +15,4 @@ builders:
     build_extensions: { ".dart": [".wrapper.dart"] }
     auto_apply: dependents
     build_to: source
-    # build_to: cache
-    # applies_builders: ["source_gen|combining_builder"]
+    
